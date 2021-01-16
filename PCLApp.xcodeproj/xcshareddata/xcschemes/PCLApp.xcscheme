@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/xlanda/Downloads/lvr-repository-master-PCL-PCLApp/PCL/PCLApp/PCLApp"
+      customWorkingDirectory = "/Users/student/Downloads/PCLApp"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

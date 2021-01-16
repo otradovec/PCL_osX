@@ -1,7 +1,3 @@
-//
-//  main.cpp
-//  PCLApp
-//
 //  Created by Jaromír Landa on 15/10/2020.
 //
 
@@ -31,7 +27,7 @@ main(int argc, char** argv)
 {
  
     PLYLoader loader;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loader.loadCloud("laboratory.ply");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loader.loadCloud("/Users/student/Downloads/PCLApp/PCLApp/urban_area.ply");
     
     pcl::KdTreeFLANN<pcl::PointXYZ> kdtree;
     kdtree.setInputCloud (cloud);
