@@ -27,7 +27,7 @@ main(int argc, char** argv)
 {
  
     PLYLoader loader;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loader.loadCloud("/Users/student/Downloads/PCLApp/PCLApp/urban_area.ply");
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud = loader.loadCloud("PCLApp/urban_area.ply");
     
     pcl::KdTreeFLANN<pcl::PointXYZ> kdtree;
     kdtree.setInputCloud (cloud);
