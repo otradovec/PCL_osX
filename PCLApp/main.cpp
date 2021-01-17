@@ -52,7 +52,5 @@ main(int argc, char** argv)
     pclVisualization.addCloud(groundExtractor.getGround(), Color(255, 0, 0));
     pclVisualization.addCloud(groundExtractor.getEverythingElse(), Color(0, 255, 0));
     pclVisualization.runVisualization();
-    
-    
     return 0;
  }

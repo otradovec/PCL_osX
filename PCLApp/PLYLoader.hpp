@@ -1,7 +1,3 @@
-//
-//  PLYLoader.hpp
-//  PCLApp
-//
 //  Created by Jaromír Landa on 04/11/2020.
 //
 

@@ -1,7 +1,3 @@
-//
-//  GroundExtractor.hpp
-//  PCLApp
-//
 //  Created by Jaromír Landa on 11/11/2020.
 //
 

@@ -7,14 +7,9 @@ PCVisualization::PCVisualization()
 }
 
 void PCVisualization::initializeVisualization(){
-    
-    // inicoalizace visuzalizeru
-    boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-    // nasetuju ho
+        boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
     m_viewer = viewer;
-    // nastavim pozadi
     m_viewer->setBackgroundColor (0, 0, 0);
-
 }
 
 
@@ -29,24 +24,18 @@ void PCVisualization::runVisualization(){
         boost::this_thread::sleep (boost::posix_time::microseconds (100000));
     }
     m_viewer->close();
-    
 }
 
 
 void PCVisualization::addCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, Color pointsColor){
-    
-    // potrebuju jmeno
-    std::stringstream stream;
+        std::stringstream stream;
     stream << "cloud" << m_numberOfClouds;
     std::string cloudName =  stream.str();
     
-    // pridam cloud
     m_viewer->addPointCloud<pcl::PointXYZ> (cloud, cloudName);
-    // nasetuju vlastnosti
     m_viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, cloudName);
-    // naseruju barvu
+    // setting color
     m_viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, (double)pointsColor.R/255, (double)pointsColor.G/255, (double)pointsColor.B/255, cloudName);
-    // inkrementuju pocet mracen
     m_numberOfClouds++;
 }
 
