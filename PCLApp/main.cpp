@@ -19,7 +19,6 @@
 #include "PCLVisualization.hpp"
 #include "GroundExtractor.hpp"
 #include "RandomSampleConsensus.hpp"
-#include "KeypointExtractor.hpp"
 
 #include <pcl/kdtree/kdtree_flann.h>
 
@@ -45,16 +44,12 @@ main(int argc, char** argv)
 
     GroundExtractor groundExtractor;
     groundExtractor.extractGround(filteredCloud);
-    
-    KeypointExtractor keypointExtractor;
-    filteredCloud = keypointExtractor.extract(filteredCloud);
+    filteredCloud = groundExtractor.getEverythingElse();
     
     PCVisualization pclVisualization;
     pclVisualization.initializeVisualization();
-    
     pclVisualization.addCloud(filteredCloud, Color(0, 255, 255));
     //pclVisualization.addCloud(groundExtractor.getGround(), Color(255, 0, 0));
-    //pclVisualization.addCloud(groundExtractor.getEverythingElse(), Color(0, 255, 0));
     pclVisualization.runVisualization();
     return 0;
  }

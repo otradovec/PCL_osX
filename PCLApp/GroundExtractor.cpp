@@ -10,8 +10,6 @@ GroundExtractor::GroundExtractor(){
 void GroundExtractor::extractGround(pcl::PointCloud<pcl::PointXYZ>::Ptr inputCloud){
     pcl::PointCloud<pcl::PointXYZ>::Ptr groundPoints (new pcl::PointCloud<pcl::PointXYZ>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr otherPoints (new pcl::PointCloud<pcl::PointXYZ>);
-
-    
     pcl::PointIndicesPtr groundIndicies (new pcl::PointIndices);
     
     pcl::ProgressiveMorphologicalFilter<pcl::PointXYZ> filter;
