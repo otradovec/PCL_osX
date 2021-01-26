@@ -28,6 +28,7 @@ public:
     PCVisualization();
     void runVisualization();
     void addCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, Color pointsColor);
+    void addNormal(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::Normal>::Ptr normalCloud);
     void initializeVisualization();
     pcl::visualization::PCLVisualizer::Ptr
     simpleVis (pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);

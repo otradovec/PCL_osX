@@ -10,6 +10,7 @@ void PCVisualization::initializeVisualization(){
         boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
     m_viewer = viewer;
     m_viewer->setBackgroundColor (0, 0, 0);
+
 }
 
 
@@ -17,7 +18,6 @@ void PCVisualization::runVisualization(){
     
     m_viewer->initCameraParameters();
     m_viewer->resetCameraViewpoint("cloud0");
-    
     while (!m_viewer->wasStopped ())
     {
         m_viewer->spinOnce (100);
@@ -37,6 +37,19 @@ void PCVisualization::addCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, Color 
     // setting color
     m_viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, (double)pointsColor.R/255, (double)pointsColor.G/255, (double)pointsColor.B/255, cloudName);
     m_numberOfClouds++;
+    //m_viewer->addCoordinateSystem();
+
+}
+
+void PCVisualization::addNormal(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::Normal>::Ptr normalCloud){
+    cout << "Normal size " << normalCloud->size() << "\n";
+    for (int i=0; i<10; i++) {
+        cout << "Normal x " << normalCloud->at(i).normal_x
+        << "Normal y " << normalCloud->at(i).normal_y
+        << "Normal z " << normalCloud->at(i).normal_z
+        << "Normal z " << normalCloud->at(i).curvature << "\n";
+    }
+    m_viewer->addPointCloudNormals<pcl::PointXYZ, pcl::Normal>(cloud, normalCloud, 50,0.1, "normals");
 }
 
 pcl::visualization::PCLVisualizer::Ptr
