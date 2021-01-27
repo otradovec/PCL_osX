@@ -1,8 +1,8 @@
 //  Created by Student on 1/17/21.
 //
 
-#ifndef RandomSampleConsensus_hpp
-#define RandomSampleConsensus_hpp
+#ifndef Ransac_hpp
+#define Ransac_hpp
 
 #include <iostream>
 #include <thread>
@@ -19,12 +19,12 @@
 
 using namespace std::chrono_literals;
 
-class RandomSampleConsensus{
+class Ransac{
 public:
-    RandomSampleConsensus();
+    Ransac();
     pcl::PointCloud<pcl::PointXYZ>::Ptr getPlanes(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud);
 };
 
 #include <stdio.h>
 
-#endif /* RandomSampleConsensus_hpp */
+#endif /* Ransac_hpp */

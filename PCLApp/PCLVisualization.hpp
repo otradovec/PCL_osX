@@ -14,6 +14,8 @@
 #include <pcl/console/parse.h>
 #include <pcl/surface/gp3.h>
 #include <Eigen/src/Core/Array.h>
+#include "Roof.hpp"
+
 
 class PCVisualization
 {
@@ -34,5 +36,7 @@ public:
     simpleVis (pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);
     void addSegmentedCloud(std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedClouds);
     Color rundomColorGenerator();
+    void addRoofs(std::vector<Roof> roofs);
+    void addLine(pcl::PointXYZ point1, pcl::PointXYZ point2, Color color);
     };
 

@@ -1,13 +1,13 @@
 //  Created by Student on 1/17/21.
 //
 
-#include "RandomSampleConsensus.hpp"
+#include "Ransac.hpp"
 
-RandomSampleConsensus::RandomSampleConsensus(){
+Ransac::Ransac(){
     
 }
 
-pcl::PointCloud<pcl::PointXYZ>::Ptr RandomSampleConsensus::getPlanes(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud){
+pcl::PointCloud<pcl::PointXYZ>::Ptr Ransac::getPlanes(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud){
 
     //cloud->points.resize (cloud->width * cloud->height);
     pcl::SampleConsensusModelPlane<pcl::PointXYZ>::Ptr

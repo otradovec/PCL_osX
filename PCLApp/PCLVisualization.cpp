@@ -31,14 +31,15 @@ void PCVisualization::addCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, Color 
         std::stringstream stream;
     stream << "cloud" << m_numberOfClouds;
     std::string cloudName =  stream.str();
-    
+    pcl::PointXYZ min,max;
+    pcl::getMinMax3D(*cloud, min, max);
+    std::cout << "min x " << min.x << "y "  << min.y << "z " << min.z << "\n";
+    std::cout << "max x " << max.x << "y "  << max.y << "z " << max.z << "\n";
+
     m_viewer->addPointCloud<pcl::PointXYZ> (cloud, cloudName);
     m_viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, cloudName);
-    // setting color
     m_viewer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, (double)pointsColor.R/255, (double)pointsColor.G/255, (double)pointsColor.B/255, cloudName);
     m_numberOfClouds++;
-    //m_viewer->addCoordinateSystem();
-
 }
 
 void PCVisualization::addNormal(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, pcl::PointCloud<pcl::Normal>::Ptr normalCloud){
@@ -78,4 +79,23 @@ void PCVisualization::addSegmentedCloud(std::vector<pcl::PointCloud<pcl::PointXY
     for (int i = 0; i < segmentedClouds.size(); i++) {
         addCloud(segmentedClouds.at(i), rundomColorGenerator());
     }
+}
+
+void PCVisualization::addRoofs(std::vector<Roof> roofs){
+    Color color = rundomColorGenerator();
+    for(Roof roof: roofs){
+        color = rundomColorGenerator();
+        this->addLine(roof.gethx(), roof.gethy(), color);
+        this->addLine(roof.gethx(), roof.getly(), color);
+        this->addLine(roof.getlx(), roof.gethy(), color);
+        this->addLine(roof.getlx(), roof.getly(), color);
+
+
+    }
+}
+
+
+void PCVisualization::addLine(pcl::PointXYZ point1, pcl::PointXYZ point2, Color color){
+    m_viewer->addLine(point1, point2, (double)color.R/255, (double)color.G/255, (double)color.B/255, "line" + std::to_string(m_numberOfClouds));
+    m_numberOfClouds += 1;
 }

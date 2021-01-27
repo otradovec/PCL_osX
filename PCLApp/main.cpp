@@ -14,14 +14,15 @@
 #include <pcl/visualization/pcl_visualizer.h>
 
 #include <pcl/filters/voxel_grid.h>
+#include <pcl/kdtree/kdtree_flann.h>
 
 #include "PLYLoader.hpp"
 #include "PCLVisualization.hpp"
 #include "GroundExtractor.hpp"
-#include "RandomSampleConsensus.hpp"
+#include "Ransac.hpp"
 #include "EdgeExtractor.hpp"
 #include "Segmentation.hpp"
-#include <pcl/kdtree/kdtree_flann.h>
+#include "RoofExtractor.hpp"
 
 
 int
@@ -50,13 +51,17 @@ main(int argc, char** argv)
     Segmentation segmentation;
     std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedCloud = segmentation.euclidianClusterSegmentation(filteredCloud);
     
+    RoofExtractor roofEx = RoofExtractor(segmentedCloud);
+    std::vector<Roof> roofs = roofEx.getRoofs();
+    
     
     //EdgeExtractor edgeExtractor;
     //filteredCloud = edgeExtractor.computeEdgeDetection(filteredCloud, 1, 100);
     
     PCVisualization pclVisualization;
     pclVisualization.initializeVisualization();
-    pclVisualization.addSegmentedCloud(segmentedCloud);
+    pclVisualization.addRoofs(roofs);
+    //pclVisualization.addSegmentedCloud(segmentedCloud);
     //pclVisualization.addCloud(filteredCloud, Color(0, 255, 255));
     //pclVisualization.addNormal(filteredCloud,edgeExtractor.getNormalCloud(filteredCloud));
     
