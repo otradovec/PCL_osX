@@ -13,6 +13,8 @@
 		2BA04B8A25500ECA000732F4 /* PCLVisualization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BA04B8825500ECA000732F4 /* PCLVisualization.cpp */; };
 		3F737A2125B4530F00F72389 /* RandomSampleConsensus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F737A1F25B4530F00F72389 /* RandomSampleConsensus.cpp */; };
 		3F7645EE25BB3965000E4907 /* EdgeExtractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F7645EC25BB3965000E4907 /* EdgeExtractor.cpp */; };
+		3F7645F225C062DB000E4907 /* Segmentation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F7645F025C062DB000E4907 /* Segmentation.cpp */; };
+		3F7645F625C07DE2000E4907 /* Roof.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F7645F425C07DE2000E4907 /* Roof.cpp */; };
 		C06E6F052567A88600D64897 /* libboost_timer.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C06E6EC42567A88300D64897 /* libboost_timer.dylib */; };
 		C06E6F062567A88600D64897 /* libboost_locale-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C06E6EC52567A88300D64897 /* libboost_locale-mt.dylib */; };
 		C06E6F072567A88600D64897 /* libboost_type_erasure.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C06E6EC62567A88300D64897 /* libboost_type_erasure.dylib */; };
@@ -351,6 +353,10 @@
 		3F737A2025B4530F00F72389 /* RandomSampleConsensus.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomSampleConsensus.hpp; sourceTree = "<group>"; };
 		3F7645EC25BB3965000E4907 /* EdgeExtractor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeExtractor.cpp; sourceTree = "<group>"; };
 		3F7645ED25BB3965000E4907 /* EdgeExtractor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EdgeExtractor.hpp; sourceTree = "<group>"; };
+		3F7645F025C062DB000E4907 /* Segmentation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Segmentation.cpp; sourceTree = "<group>"; };
+		3F7645F125C062DB000E4907 /* Segmentation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Segmentation.hpp; sourceTree = "<group>"; };
+		3F7645F425C07DE2000E4907 /* Roof.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Roof.cpp; sourceTree = "<group>"; };
+		3F7645F525C07DE2000E4907 /* Roof.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Roof.hpp; sourceTree = "<group>"; };
 		C06E6EC42567A88300D64897 /* libboost_timer.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_timer.dylib; path = "/Users/xlanda/Downloads/lvr-repository-master-PCL-PCLApp/PCL/PCLApp/libs/../../../../../../../usr/local/Cellar/boost/1.72.0_3/lib/libboost_timer.dylib"; sourceTree = "<absolute>"; };
 		C06E6EC52567A88300D64897 /* libboost_locale-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_locale-mt.dylib"; path = "/Users/xlanda/Downloads/lvr-repository-master-PCL-PCLApp/PCL/PCLApp/libs/../../../../../../../usr/local/Cellar/boost/1.72.0_3/lib/libboost_locale-mt.dylib"; sourceTree = "<absolute>"; };
 		C06E6EC62567A88300D64897 /* libboost_type_erasure.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_type_erasure.dylib; path = "/Users/xlanda/Downloads/lvr-repository-master-PCL-PCLApp/PCL/PCLApp/libs/../../../../../../../usr/local/Cellar/boost/1.72.0_3/lib/libboost_type_erasure.dylib"; sourceTree = "<absolute>"; };
@@ -1004,6 +1010,8 @@
 		2B7C13AC25381E66005628C1 /* PCLApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F7645F025C062DB000E4907 /* Segmentation.cpp */,
+				3F7645F125C062DB000E4907 /* Segmentation.hpp */,
 				2B7C13AD25381E66005628C1 /* main.cpp */,
 				2BA04B8825500ECA000732F4 /* PCLVisualization.cpp */,
 				2BA04B8925500ECA000732F4 /* PCLVisualization.hpp */,
@@ -1016,6 +1024,8 @@
 				3F737A2025B4530F00F72389 /* RandomSampleConsensus.hpp */,
 				3F7645EC25BB3965000E4907 /* EdgeExtractor.cpp */,
 				3F7645ED25BB3965000E4907 /* EdgeExtractor.hpp */,
+				3F7645F425C07DE2000E4907 /* Roof.cpp */,
+				3F7645F525C07DE2000E4907 /* Roof.hpp */,
 			);
 			path = PCLApp;
 			sourceTree = "<group>";
@@ -1399,6 +1409,8 @@
 				3F7645EE25BB3965000E4907 /* EdgeExtractor.cpp in Sources */,
 				3F737A2125B4530F00F72389 /* RandomSampleConsensus.cpp in Sources */,
 				2B08E5E4255BDCD100A073FA /* GroundExtractor.cpp in Sources */,
+				3F7645F225C062DB000E4907 /* Segmentation.cpp in Sources */,
+				3F7645F625C07DE2000E4907 /* Roof.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

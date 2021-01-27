@@ -20,6 +20,7 @@
 #include "GroundExtractor.hpp"
 #include "RandomSampleConsensus.hpp"
 #include "EdgeExtractor.hpp"
+#include "Segmentation.hpp"
 #include <pcl/kdtree/kdtree_flann.h>
 
 
@@ -46,13 +47,18 @@ main(int argc, char** argv)
     groundExtractor.extractGround(filteredCloud);
     filteredCloud = groundExtractor.getEverythingElse();
     
-    EdgeExtractor edgeExtractor;
+    Segmentation segmentation;
+    std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedCloud = segmentation.euclidianClusterSegmentation(filteredCloud);
+    
+    
+    //EdgeExtractor edgeExtractor;
     //filteredCloud = edgeExtractor.computeEdgeDetection(filteredCloud, 1, 100);
     
     PCVisualization pclVisualization;
     pclVisualization.initializeVisualization();
-    pclVisualization.addCloud(filteredCloud, Color(0, 255, 255));
-    pclVisualization.addNormal(filteredCloud,edgeExtractor.getNormalCloud(filteredCloud));
+    pclVisualization.addSegmentedCloud(segmentedCloud);
+    //pclVisualization.addCloud(filteredCloud, Color(0, 255, 255));
+    //pclVisualization.addNormal(filteredCloud,edgeExtractor.getNormalCloud(filteredCloud));
     
     //pclVisualization.addCloud(groundExtractor.getGround(), Color(255, 0, 0));
     pclVisualization.runVisualization();

@@ -65,3 +65,17 @@ PCVisualization::simpleVis (pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud)
   return (viewer);
 }
 
+Color PCVisualization::rundomColorGenerator() {
+    
+    int r = rand() % (255 - 0) + 0;
+    int g = rand() % (255 - 0) + 0;
+    int b = rand() % (255 - 0) + 0;
+    return Color(r, g, b);
+}
+
+void PCVisualization::addSegmentedCloud(std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedClouds) {
+    
+    for (int i = 0; i < segmentedClouds.size(); i++) {
+        addCloud(segmentedClouds.at(i), rundomColorGenerator());
+    }
+}

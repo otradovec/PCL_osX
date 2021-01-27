@@ -32,6 +32,7 @@ public:
     void initializeVisualization();
     pcl::visualization::PCLVisualizer::Ptr
     simpleVis (pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);
-    
+    void addSegmentedCloud(std::vector<pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedClouds);
+    Color rundomColorGenerator();
     };
 
