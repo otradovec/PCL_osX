@@ -7,6 +7,7 @@
 
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
+#include <pcl/common/common.h>
 
 using namespace pcl;
 using namespace std;
@@ -19,9 +20,10 @@ public:
     PointXYZ gethx();
     PointXYZ getlx();
     PointXYZ gethy();
-    PointXYZ getly();/*
+    PointXYZ getly();
     PointXYZ getTophx();
-    PointXYZ getToplx();*/
+    PointXYZ getToplx();
+    bool goesFromTopleftTobottomright();
 };
 
 #endif /* Roof_hpp */

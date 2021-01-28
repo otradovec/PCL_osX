@@ -61,7 +61,7 @@ main(int argc, char** argv)
     PCVisualization pclVisualization;
     pclVisualization.initializeVisualization();
     pclVisualization.addRoofs(roofs);
-    //pclVisualization.addSegmentedCloud(segmentedCloud);
+    pclVisualization.addSegmentedCloud(segmentedCloud);
     //pclVisualization.addCloud(filteredCloud, Color(0, 255, 255));
     //pclVisualization.addNormal(filteredCloud,edgeExtractor.getNormalCloud(filteredCloud));
     
