@@ -102,9 +102,6 @@ void PCVisualization::addRoofs(std::vector<Roof> roofs){
             this->addLine(roof.getToplx(), roof.getlx(), color);
             this->addLine(roof.getToplx(),roof.getly(),color);
         }
-
-        this->addLine(roof.gethx(),PointXYZ(roof.gethx().x+20,roof.gethx().y,roof.gethx().z),color);
-        
     }
 }
 
