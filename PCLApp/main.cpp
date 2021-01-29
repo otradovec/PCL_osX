@@ -8,9 +8,6 @@
 #include <pcl/filters/extract_indices.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
-#include <pcl/sample_consensus/ransac.h>
-#include <pcl/sample_consensus/sac_model_plane.h>
-#include <pcl/sample_consensus/sac_model_sphere.h>
 #include <pcl/visualization/pcl_visualizer.h>
 
 #include <pcl/filters/voxel_grid.h>
@@ -19,7 +16,6 @@
 #include "PLYLoader.hpp"
 #include "PCLVisualization.hpp"
 #include "GroundExtractor.hpp"
-#include "Ransac.hpp"
 #include "EdgeExtractor.hpp"
 #include "Segmentation.hpp"
 #include "RoofExtractor.hpp"
